@@ -8,14 +8,14 @@ using Visma.Sign.Api.Client.Settings;
 
 namespace Visma.Sign.Api.Client.Tokens
 {
-    public sealed class PartnerPartnerAccessToken : IPartnerAccessToken
+    public sealed class PartnerAccessToken : IPartnerAccessToken
     {
         private readonly ICredentials m_credentials;
         private readonly IEndpoint m_endpoint;
         private readonly IApiResponse m_response;
         private readonly IScopes m_scopes;
 
-        public PartnerPartnerAccessToken(ICredentials credentials, IEndpoint endpoint, IApiResponse response, IScopes scopes)
+        public PartnerAccessToken(ICredentials credentials, IEndpoint endpoint, IApiResponse response, IScopes scopes)
         {
             m_credentials = credentials;
             m_endpoint = endpoint;
