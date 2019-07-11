@@ -4,6 +4,6 @@ namespace Visma.Sign.Api.Client.Tokens
 {
     public interface IOrganizationToken
     {
-        Task<string> Get(string organizationIdentifier);
+        Task<string> Get(string businessId);
     }
 }

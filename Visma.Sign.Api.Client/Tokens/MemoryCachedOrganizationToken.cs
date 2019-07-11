@@ -14,14 +14,14 @@ namespace Visma.Sign.Api.Client.Tokens
             m_organizationMappings = new Dictionary<string, string>();
         }
 
-        public async Task<string> Get(string organizationIdentifier)
+        public async Task<string> Get(string businessId)
         {
-            if (!m_organizationMappings.ContainsKey(organizationIdentifier))
+            if (!m_organizationMappings.ContainsKey(businessId))
             {
-                m_organizationMappings.Add(organizationIdentifier, await m_decorated.Get(organizationIdentifier));
+                m_organizationMappings.Add(businessId, await m_decorated.Get(businessId));
             }
 
-            return m_organizationMappings[organizationIdentifier];
+            return m_organizationMappings[businessId];
         }
     }
 }

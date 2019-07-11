@@ -21,13 +21,18 @@ namespace Visma.Sign.Api.Client.Tokens
             m_response = response;
         }
 
-        public async Task<string> Get(string organizationIdentifier)
+        public async Task<string> Get(string businessId)
         {
-            var organization = new GetOrganization(organizationIdentifier);
+            var organization = new GetOrganization(businessId);
             var request = new HttpRequestMessage(organization.Method, m_endpoint.Uri() + organization.ResourceUri);
             request.Headers.Add("Authorization", (await m_partnerAccessToken.Get()).PartnerToken());
 
             var organizations = await m_response.GetResponse<OrganizationsDto>(request);
+            if (!organizations.organizations.Any())
+            {
+                throw new OrganizationNotFoundException(businessId);
+            }
+
             return organizations.organizations.First().uuid;
         }
     }

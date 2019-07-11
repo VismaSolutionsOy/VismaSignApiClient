@@ -4,9 +4,9 @@ namespace Visma.Sign.Api.Client.UnitTests.Builders.Dtos
 {
     sealed class PartnerAccessTokenDtoBuilder
     {
-        private string m_accessToken = "";
+        private string m_accessToken = "xxxx";
         private int m_expiresIn = 1;
-        private string m_tokenType = "";
+        private string m_tokenType = "Bearer";
         private string m_scope = "";
 
         public PartnerAccessTokenDtoBuilder WithAccessToken(string value)
