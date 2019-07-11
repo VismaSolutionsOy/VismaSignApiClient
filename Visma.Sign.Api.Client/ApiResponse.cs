@@ -8,14 +8,20 @@ namespace Visma.Sign.Api.Client
 {
     public sealed class ApiResponse : IApiResponse
     {
+        private readonly IHttpClient m_client;
+
+        public ApiResponse(IHttpClient client)
+        {
+            m_client = client;
+        }
+
         public async Task<TResult> GetResponse<TResult>(HttpRequestMessage request) where TResult : class
         {
-            var client = new HttpClient();
-            var response = await client.SendAsync(request);
-
+            var response = await m_client.SendAsync(request);
             if (!response.IsSuccessStatusCode)
             {
-                throw new HttpRequestException(response.ReasonPhrase);
+                var content = response.Content != null ? await response.Content.ReadAsStringAsync() : "";
+                throw new HttpRequestException(content);
             }
 
             if (typeof(TResult) == typeof(LocationDto))
