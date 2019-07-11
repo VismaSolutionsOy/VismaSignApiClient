@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visma.Sign.Api.Client", "Visma.Sign.Api.Client\Visma.Sign.Api.Client.csproj", "{D22429C0-3911-458C-88AB-1CA8B75C3126}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visma.Sign.Api.Client.Examples", "Visma.Sign.Api.Client.Examples\Visma.Sign.Api.Client.Examples.csproj", "{689664C1-538D-44D3-9B9B-1749BD59AF33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Visma.Sign.Api.Client.UnitTests", "Visma.Sign.Api.Client.UnitTests\Visma.Sign.Api.Client.UnitTests.csproj", "{456AB932-C901-4ED7-847F-E19A2A070C4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D22429C0-3911-458C-88AB-1CA8B75C3126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22429C0-3911-458C-88AB-1CA8B75C3126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22429C0-3911-458C-88AB-1CA8B75C3126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22429C0-3911-458C-88AB-1CA8B75C3126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689664C1-538D-44D3-9B9B-1749BD59AF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689664C1-538D-44D3-9B9B-1749BD59AF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689664C1-538D-44D3-9B9B-1749BD59AF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689664C1-538D-44D3-9B9B-1749BD59AF33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{456AB932-C901-4ED7-847F-E19A2A070C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456AB932-C901-4ED7-847F-E19A2A070C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456AB932-C901-4ED7-847F-E19A2A070C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{456AB932-C901-4ED7-847F-E19A2A070C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75B2E9D2-872F-42B1-AF7B-02368CB5D654}
+	EndGlobalSection
+EndGlobal
