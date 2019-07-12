@@ -64,6 +64,18 @@ namespace Visma.Sign.Api.Client.UnitTests
         }
 
         [Test]
+        public void AskingResponse_WithHttpStatus_ReturnsExpected()
+        {
+            var sut = new ApiResponseBuilder()
+                .WithClient(new HttpClientStubBuilder().WithSend(new HttpResponseMessage(HttpStatusCode.BadRequest)).Build())
+                .Build();
+
+            var actual = sut.GetResponse<HttpStatusCodeDto>(new HttpRequestMessage()).Result;
+
+            Assert.AreEqual(HttpStatusCode.BadRequest, actual.Code);
+        }
+
+        [Test]
         public void AskingResponse_WithSuccessfulResponse_SerializesCorrectly()
         {
             var sut = new ApiResponseBuilder()

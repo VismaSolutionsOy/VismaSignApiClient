@@ -49,6 +49,22 @@ namespace Visma.Sign.Api.Client.UnitTests
             Assert.AreEqual("https://sign.visma.net/api/v1/organization?business_id=1234567-1&as_organization=5678", actual);
         }
 
+        [TestCase("")]
+        [TestCase(null)]
+        public void Creating_WithoutOrganizationBeingDefined_SetsUriCorrectly(string businessId)
+        {
+            var token = new OrganizationTokenStubBuilder().Build();
+            var sut = new PartnerApiRequestBuilder()
+                .WithEndpoint(new EndpointStubBuilder().WithUri("https://sign.visma.net/").Build())
+                .WithCurrentOrganization(new CurrentOrganizationStubBuilder().WithBusinessId(businessId).Build())
+                .Build();
+
+            var actual = sut.Create(new ResourceBaseBuilder().WithResourceUri("api/v1/organization?business_id=1234567-1")).Result.RequestUri.ToString();
+
+            Assert.AreEqual("https://sign.visma.net/api/v1/organization?business_id=1234567-1", actual);
+            token.Received(0).Get(Arg.Any<string>());
+        }
+
         [Test]
         public void Creating_WithGivenBusinessId_GetsCorrectToken()
         {

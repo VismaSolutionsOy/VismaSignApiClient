@@ -8,17 +8,7 @@ namespace Visma.Sign.Api.Client.UnitTests.Resources.V1
     class GetOrganizationTests
     {
         [Test]
-        public void AskingOrganization_WithGivenBusinessId_SetsResourceUriCorrectly()
-        {
-            var sut = new GetOrganizationBuilder().WithBusinessId("3122704-8").Build();
-
-            var actual = sut.ResourceUri;
-
-            Assert.AreEqual("api/v1/organization/?business_id=3122704-8", actual);
-        }
-
-        [Test]
-        public void AskingOrganization_WithHttpMethod_IsExpected()
+        public void GettingOrganization_WithHttpMethod_IsExpected()
         {
             var sut = new GetOrganizationBuilder().Build();
 
@@ -26,5 +16,16 @@ namespace Visma.Sign.Api.Client.UnitTests.Resources.V1
 
             Assert.AreEqual(HttpMethod.Get, actual);
         }
+
+        [Test]
+        public void GettingOrganization_WithOrganizationUuid_SetsUriCorrectly()
+        {
+            var sut = new GetOrganizationBuilder().WithOrganizationUuid("xxx-yyy").Build();
+
+            var actual = sut.ResourceUri;
+
+            Assert.AreEqual("api/v1/organization/xxx-yyy", actual);
+        }
+
     }
 }

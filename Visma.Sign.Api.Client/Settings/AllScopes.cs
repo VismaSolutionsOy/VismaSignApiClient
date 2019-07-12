@@ -19,7 +19,8 @@ namespace Visma.Sign.Api.Client.Settings
                 "category_get_all",
                 "invitee_group_get_all",
                 "saved_invitation_message_get_all",
-                "document_search"
+                "document_search",
+                "organization_access"
             };
         }
     }

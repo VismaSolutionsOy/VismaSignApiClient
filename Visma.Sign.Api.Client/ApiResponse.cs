@@ -18,6 +18,11 @@ namespace Visma.Sign.Api.Client
         public async Task<TResult> GetResponse<TResult>(HttpRequestMessage request) where TResult : class
         {
             var response = await m_client.SendAsync(request);
+            if (typeof(TResult) == typeof(HttpStatusCodeDto))
+            {
+                return HttpStatusCodeResponse<TResult>(response);
+            }
+
             if (!response.IsSuccessStatusCode)
             {
                 var content = response.Content != null ? await response.Content.ReadAsStringAsync() : "";
@@ -26,12 +31,23 @@ namespace Visma.Sign.Api.Client
 
             if (typeof(TResult) == typeof(LocationDto))
             {
-                var location = new LocationDto(response.Headers.Location);
-                return (TResult) Convert.ChangeType(location, typeof(TResult));
+                return LocationResponse<TResult>(response);
             }
 
             var responseBody = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<TResult>(responseBody);
+        }
+
+        private static TResult LocationResponse<TResult>(HttpResponseMessage response) where TResult : class
+        {
+            var location = new LocationDto(response.Headers.Location);
+            return (TResult) Convert.ChangeType(location, typeof(TResult));
+        }
+
+        private static TResult HttpStatusCodeResponse<TResult>(HttpResponseMessage response) where TResult : class
+        {
+            var status = new HttpStatusCodeDto(response.StatusCode);
+            return (TResult) Convert.ChangeType(status, typeof(TResult));
         }
     }
 }

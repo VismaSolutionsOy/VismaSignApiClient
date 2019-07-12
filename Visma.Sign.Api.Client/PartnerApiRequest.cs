@@ -37,9 +37,19 @@ namespace Visma.Sign.Api.Client
         private async Task<Uri> RequestUri<TRequest>(TRequest value) where TRequest : ResourceBase
         {
             var requestBaseUri = new Uri(m_endpoint.Uri() + value.ResourceUri);
+            return new Uri(requestBaseUri + await GetOrganizationQueryParameter(requestBaseUri));
+        }
+
+        private async Task<string> GetOrganizationQueryParameter(Uri requestBaseUri)
+        {
+            var currentBusinessId = m_organization.BusinessId();
+            if (string.IsNullOrEmpty(currentBusinessId))
+            {
+                return "";
+            }
+
             var parameterSeparator = string.IsNullOrEmpty(requestBaseUri.Query) ? "?" : "&";
-            
-            return new Uri(requestBaseUri + parameterSeparator + "as_organization=" + await m_organizationToken.Get(m_organization.BusinessId()));
-        } 
+            return parameterSeparator + "as_organization=" + await m_organizationToken.Get(currentBusinessId);
+        }
     }
 }

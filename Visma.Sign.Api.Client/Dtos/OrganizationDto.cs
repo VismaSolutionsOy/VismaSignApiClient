@@ -5,5 +5,6 @@
         public string uuid { get; set; }
         public string business_id { get; set; }
         public string name { get; set; }
+        public AuthorizationDto authorization { get; set; }
     }
 }

@@ -5,5 +5,10 @@ namespace Visma.Sign.Api.Client.Dtos
     public sealed class OrganizationsDto
     {
         public List<OrganizationDto> organizations { get; set; }
+
+        public OrganizationsDto()
+        {
+            organizations = new List<OrganizationDto>();
+        }
     }
 }

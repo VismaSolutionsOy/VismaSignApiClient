@@ -4,15 +4,16 @@ namespace Visma.Sign.Api.Client.UnitTests.Builders.Resources.V1
 {
     sealed class GetOrganizationBuilder
     {
-        private string m_businessId = "3122704-8";
+        private string m_uuid = "1234";
 
-        public GetOrganizationBuilder WithBusinessId(string value)
+        public GetOrganizationBuilder WithOrganizationUuid(string value)
         {
-            m_businessId = value;
+            m_uuid = value;
             return this;
         }
 
         public GetOrganization Build()
-            => new GetOrganization(m_businessId);
+            => new GetOrganization(m_uuid);
+
     }
 }
