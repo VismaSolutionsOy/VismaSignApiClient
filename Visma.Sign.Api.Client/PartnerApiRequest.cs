@@ -39,7 +39,7 @@ namespace Visma.Sign.Api.Client
             var requestBaseUri = new Uri(m_endpoint.Uri() + value.ResourceUri);
             var parameterSeparator = string.IsNullOrEmpty(requestBaseUri.Query) ? "?" : "&";
             
-            return new Uri(m_endpoint.Uri() + value.ResourceUri + parameterSeparator + "as_organization=" + await m_organizationToken.Get(m_organization.OrganizationIdentifier()));
+            return new Uri(requestBaseUri + parameterSeparator + "as_organization=" + await m_organizationToken.Get(m_organization.BusinessId()));
         } 
     }
 }

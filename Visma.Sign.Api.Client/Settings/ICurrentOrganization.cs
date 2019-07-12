@@ -2,6 +2,6 @@
 {
     public interface ICurrentOrganization
     {
-        string OrganizationIdentifier();
+        string BusinessId();
     }
 }

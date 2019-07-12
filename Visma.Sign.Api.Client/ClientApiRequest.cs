@@ -21,8 +21,8 @@ namespace Visma.Sign.Api.Client
             m_credentials = credentials;
             m_endpoint = endpoint;
             m_time = time;
-            m_macHash = new MD5CryptoServiceProvider();
-            m_contentHash = new HMACSHA512(Convert.FromBase64String(credentials.Secret()));
+            m_macHash = new HMACSHA512(Convert.FromBase64String(credentials.Secret()));
+            m_contentHash = new MD5CryptoServiceProvider();
         }
 
 
@@ -32,7 +32,7 @@ namespace Visma.Sign.Api.Client
 
         private async Task<HttpRequestMessage> CreateRequest(ResourceBase value)
         {
-            var request = new HttpRequestMessage(value.Method, m_endpoint.Uri().ToString() + value.ResourceUri);
+            var request = new HttpRequestMessage(value.Method, m_endpoint.Uri() + value.ResourceUri);
 
             if (value.Content != null)
             {

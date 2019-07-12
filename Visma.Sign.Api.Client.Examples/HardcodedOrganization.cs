@@ -11,7 +11,7 @@ namespace Visma.Sign.Api.Client.Examples
             m_identifier = identifier;
         }
 
-        public string OrganizationIdentifier()
+        public string BusinessId()
             => m_identifier;
     }
 }
