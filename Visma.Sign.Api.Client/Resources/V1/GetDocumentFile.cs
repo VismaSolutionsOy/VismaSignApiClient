@@ -2,7 +2,7 @@
 
 namespace Visma.Sign.Api.Client.Resources.V1
 {
-    public class GetDocumentFile : ResourceBase
+    public sealed class GetDocumentFile : ResourceBase
     {
         public static GetDocumentFile FromDocument(string uuid, int order)
             => new GetDocumentFile(uuid, order);

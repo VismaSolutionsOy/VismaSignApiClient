@@ -1,7 +1,7 @@
 ﻿using Visma.Sign.Api.Client.Settings;
 using Visma.Sign.Api.Client.Tokens;
 
-namespace Visma.Sign.Api.Client.Examples.PartnerApi
+namespace Visma.Sign.Api.Client.Examples.PartnerUsage
 {
     public sealed class PartnerClientFactory
     {

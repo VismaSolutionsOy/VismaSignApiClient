@@ -7,9 +7,9 @@ using Visma.Sign.Api.Client.Resources.V1;
 using Visma.Sign.Api.Client.Settings;
 using ICredentials = Visma.Sign.Api.Client.Settings.ICredentials;
 
-namespace Visma.Sign.Api.Client.Examples.PartnerApi
+namespace Visma.Sign.Api.Client.Examples.PartnerUsage
 {
-    public class RequestAccessToAnOrganization
+    public sealed class RequestAccessToAnOrganization
     {
         private readonly IEndpoint m_endpoint;
         private readonly ICredentials m_credentials;
