@@ -8,7 +8,7 @@ using Visma.Sign.Api.Client.Settings;
 
 namespace Visma.Sign.Api.Client
 {
-    public sealed class ClientApiRequest : IApiRequest
+    public sealed class OrganizationApiRequest : IApiRequest
     {
         private readonly ICredentials m_credentials;
         private readonly IEndpoint m_endpoint;
@@ -16,7 +16,7 @@ namespace Visma.Sign.Api.Client
         private readonly HashAlgorithm m_macHash;
         private readonly HashAlgorithm m_contentHash;
 
-        public ClientApiRequest(ICredentials credentials, IEndpoint endpoint, ITimeProvider time)
+        public OrganizationApiRequest(ICredentials credentials, IEndpoint endpoint, ITimeProvider time)
         {
             m_credentials = credentials;
             m_endpoint = endpoint;

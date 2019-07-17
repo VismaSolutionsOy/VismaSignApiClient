@@ -15,5 +15,8 @@ namespace Visma.Sign.Api.Client.UnitTests.Builders.Resources.V1
         public GetOrganization Build()
             => new GetOrganization(m_uuid);
 
+        public static implicit operator GetOrganization(GetOrganizationBuilder b)
+            => b.Build();
+
     }
 }
