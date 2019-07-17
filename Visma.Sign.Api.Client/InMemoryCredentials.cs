@@ -1,13 +1,13 @@
 ﻿using Visma.Sign.Api.Client.Settings;
 
-namespace Visma.Sign.Api.Client.Examples
+namespace Visma.Sign.Api.Client
 {
-    public sealed class HardcodedCredentials : ICredentials
+    public sealed class InMemoryCredentials : ICredentials
     {
         private readonly string m_secret;
         private readonly string m_identifier;
 
-        public HardcodedCredentials(string secret, string identifier)
+        public InMemoryCredentials(string identifier, string secret)
         {
             m_secret = secret;
             m_identifier = identifier;
