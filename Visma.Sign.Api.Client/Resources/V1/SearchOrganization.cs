@@ -5,7 +5,7 @@ namespace Visma.Sign.Api.Client.Resources.V1
     public sealed class SearchOrganization : ResourceBase
     {
         public SearchOrganization(string businessId) 
-            : base("api/v1/organization/?business_id=" + businessId, HttpMethod.Get, )
+            : base("api/v1/organization/?business_id=" + businessId, HttpMethod.Get)
         {}
     }
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Visma.Sign.Api.Client.Dtos;
 using Visma.Sign.Api.Client.Resources.V1;
 
-namespace Visma.Sign.Api.Client.Examples.PartnerUsage
+namespace Visma.Sign.Api.Client.Examples.PartnerExamples
 {
     public sealed class RequestAccessToAnOrganization
     {

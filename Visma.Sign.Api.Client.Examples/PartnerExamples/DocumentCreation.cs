@@ -4,9 +4,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Visma.Sign.Api.Client.Dtos;
 using Visma.Sign.Api.Client.Resources.V1;
-using Visma.Sign.Api.Client.Settings;
 
-namespace Visma.Sign.Api.Client.Examples.PartnerUsage
+namespace Visma.Sign.Api.Client.Examples.PartnerExamples
 {
     public sealed class DocumentCreation
     {
@@ -42,7 +41,5 @@ namespace Visma.Sign.Api.Client.Examples.PartnerUsage
             var documentStatus = await m_client.SendRequest<DocumentStatusDto>(new GetDocumentStatus(documentLocation.Uuid));
             Console.WriteLine($" status is: {documentStatus.status}");
         }
-
-
     }
 }

@@ -40,8 +40,8 @@ namespace Visma.Sign.Api.Client
                 request.Content.Headers.ContentMD5 = m_contentHash.ComputeHash(await value.Content.ReadAsByteArrayAsync());
             }
 
-            request.Headers.Authorization = CreateAuthorization(value, request);
             request.Headers.Date = m_time.UtcNow();
+            request.Headers.Authorization = CreateAuthorization(value, request);
 
             return request;
         }
@@ -56,15 +56,27 @@ namespace Visma.Sign.Api.Client
                             string.Join(
                                 "\n",
                                 request.Method.ToString(),
-                                Convert.ToBase64String(
-                                    request.Content != null
-                                        ? request.Content.Headers.ContentMD5
-                                        : m_contentHash.ComputeHash(new byte[] { })
-                                ), request.Content != null ? request.Content.Headers.ContentType.ToString() : "",
-                                request.Headers.Date.GetValueOrDefault(m_time.UtcNow()).ToString("r"), value.ResourceUri)
+                                Base64Content(request.Content), 
+                                ContentType(request.Content),
+                                GetRequestTime(request), 
+                                "/" + value.ResourceUri)
                         )
                     )
                 )
             );
+
+        private string Base64Content(HttpContent content)
+            => Convert.ToBase64String(
+                content != null
+                    ? content.Headers.ContentMD5
+                    : m_contentHash.ComputeHash(new byte[] { }));
+
+        private static string ContentType(HttpContent content)
+            => content != null
+                ? content.Headers.ContentType.ToString()
+                : "";
+
+        private string GetRequestTime(HttpRequestMessage request)
+            => request.Headers.Date.GetValueOrDefault(m_time.UtcNow()).ToString("r");
     }
 }
