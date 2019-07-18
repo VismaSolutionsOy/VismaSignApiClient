@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Visma.Sign.Api.Client.Settings;
 
-namespace Visma.Sign.Api.Client.Settings
+namespace Visma.Sign.Api.Client.Examples.PartnerExamples
 {
     public sealed class AllScopes : IScopes
     {
