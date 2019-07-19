@@ -8,7 +8,7 @@ namespace Visma.Sign.Api.Client.Resources.V1
             => new GetDocumentFile(uuid, order);
 
         private GetDocumentFile(string uuid, int order)
-            : base($"api/v1/document/{uuid}/files/{order}", HttpMethod.Get)
+            : base($"api/v1/document/{UrlEncode(uuid)}/files/{order}", HttpMethod.Get)
         {}
 
     }

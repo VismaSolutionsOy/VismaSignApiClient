@@ -9,7 +9,7 @@ namespace Visma.Sign.Api.Client.Resources.V1
             => new SearchDocuments("participant", value);
 
         private SearchDocuments(string parameter, string value)
-            : base("api/v1/document/?" + HttpUtility.UrlEncode(parameter) + "=" + HttpUtility.UrlEncode(value), HttpMethod.Get)
+            : base("api/v1/document/?" + UrlEncode(parameter, value), HttpMethod.Get)
         { }
 
 

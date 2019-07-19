@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Web;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -48,5 +49,11 @@ namespace Visma.Sign.Api.Client
             ResourceUri = resourceUri;
             Method = method;
         }
+
+        protected static string UrlEncode(string parameter, string value)
+            => UrlEncode(parameter) + "=" + UrlEncode(value);
+
+        protected static string UrlEncode(string value)
+            => HttpUtility.UrlEncode(value);
     }
 }
