@@ -1,14 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Petri Miikki</Authors>
     <Company>Visma Solutions Oy</Company>
     <Product>Visma Sign</Product>
+    <Description>Visma Sign is a online secure document signing service.
+
+Library is meant to be production ready implementation for anyone using .NET platform and having integration with Visma Sign. Main point is that integration can be started right away without needing to spend time writing code to use Visma Sign's API.
+
+Organization API documentation is found at: https://sign.visma.net/api/docs/v1/
+Partner API documentation is found at: https://sign.visma.net/api/docs/v1/</Description>
+    <RepositoryUrl>https://github.com/VismaSolutionsOy/VismaSignApiClient</RepositoryUrl>
+    <NeutralLanguage></NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <Content Include="..\README.md">
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
   </ItemGroup>
 
 </Project>

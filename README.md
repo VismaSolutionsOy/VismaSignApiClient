@@ -4,7 +4,7 @@ Visma Solutions Oy
 
 Visma Sign is a online secure document signing service.
 
-Client API documentation is found at: https://sign.visma.net/api/docs/v1/
+Organization API documentation is found at: https://sign.visma.net/api/docs/v1/
 
 Partner API documentation is found at: https://sign.visma.net/api/docs/v1/
 
@@ -50,8 +50,8 @@ API calls are made using ISignClient interface which is implemented by `SignClie
 examples of constructing this class.
 
 There are two different implementations of `IApiRequest` interface which will handle differences 
-between client/partner usage:
-1. For client: `ClientApiRequest`
+between organization/partner usage:
+1. For organization: `OrganizationApiRequest`
 1. For partner: `PartnerApiRequest`
 
 ## Examples project
