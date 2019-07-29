@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Petri Miikki</Authors>
+    <Company>Visma Solutions Oy</Company>
+    <Product>Visma Sign</Product>
   </PropertyGroup>
 
   <ItemGroup>
