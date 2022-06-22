@@ -16,7 +16,7 @@ Partner API documentation is found at: https://sign.visma.net/api/docs/v1/</Desc
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <Content Include="..\README.md">
       <Pack>true</Pack>
       <PackagePath>\</PackagePath>
